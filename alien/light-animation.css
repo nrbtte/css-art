@@ -1,0 +1,43 @@
+.light-1 {
+	animation: light1 3s infinite;
+}
+
+.light-2 {
+	animation: light2 3s infinite;
+	animation-delay: 2s;
+}
+
+.light-3 {
+	animation: light3 3s infinite;
+	animation-delay: 4s;
+}
+
+@keyframes light1 {
+	0%,
+	33.33% {
+		background-color: red;
+	}
+	50% {
+		background-color: #ffc078d8;
+	}
+}
+
+@keyframes light2 {
+	0%,
+	33.33% {
+		background-color: rgb(0, 255, 13);
+	}
+	50% {
+		background-color: #ffc078d8;
+	}
+}
+
+@keyframes light3 {
+	0%,
+	33.33% {
+		background-color: rgb(25, 0, 255);
+	}
+	50% {
+		background-color: #ffc078d8;
+	}
+}

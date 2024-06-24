@@ -1,0 +1,199 @@
+:root {
+	--background-color-body: #2196f3;
+	--alien-color: #4caf50;
+	--alien-mouth-color: #357a38;
+	--ship-glass-color: #ccd9ed;
+	--ship-golden-rim-color: #f5d142;
+	--ship-golden-bottom-color: #f5b342;
+	--alien-eye-background: #fff;
+	--alien-eye: #000;
+	--led-ligh-color: #ffc078d8;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	
+}
+
+body {
+	background-color: var(--background-color-body);
+}
+
+.container {
+	height: 32rem;
+	width: 32rem;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: center;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+.ship {
+	border-radius: 300px;
+
+	background-color: var(--ship-glass-color);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+
+	height: 27rem;
+	width: 15rem;
+
+}
+
+
+.alien {
+	border-radius: 300px 300px 0 0;
+	background-color: var(--alien-color);
+	height: 13rem;
+	width: 11rem;
+}
+
+.alien-body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 15rem;
+	width: 11.5rem;
+}
+
+.eye {
+	background-color: var(--alien-eye-background);
+	border-radius: 50%;
+	height: 7rem;
+	width: 7rem;
+
+	display: flex;
+	justify-content: center;
+	padding-top: 2rem;
+	position: relative;
+	top: -2rem;
+}
+
+.eye .circle {
+	border: 10px solid var(--alien-eye);
+	border-bottom: none;
+	height: 2rem;
+	width: 4rem;
+	border-radius: 4rem 4rem 0 0;
+}
+
+.mouth {
+	background-color: var(--alien-mouth-color);
+	height: 1.5rem;
+	width: 2.5rem;
+	border-radius: 0 0 3rem 3rem;
+	position: relative;
+	top: -0.5rem;
+}
+
+.ship .rim {
+	height: 2rem;
+	background-color: var(--ship-golden-rim-color);
+	width: inherit;
+}
+
+.ship .bottom {
+	height: 7rem;
+	background-color: var(--ship-golden-bottom-color);
+	width: inherit;
+	border-radius: 0 0 300px 300px;
+}
+
+.leg-left,
+.leg-right {
+	height: 4rem;
+	width: 4rem;
+	border: 1rem solid var(--ship-golden-bottom-color);
+}
+
+.leg-left {
+	border-bottom: none;
+	border-right: none;
+	border-radius: 4rem 0 0 0;
+}
+
+.leg-right {
+	border-bottom: none;
+	border-left: none;
+	border-radius: 0 4rem 0 0;
+}
+
+.legs {
+	display: flex;
+	justify-content: center;
+	position: relative;
+	top: -3rem;
+	gap: 5rem;
+}
+
+.antenas {
+	display: flex;
+	justify-content: center;
+}
+
+.antenas .alien-antenas {
+	display: flex;
+	gap: 4rem;
+	position: relative;
+	top: -1rem;
+	left: 6rem;
+}
+
+.antena-left,
+.antena-right {
+	height: 4rem;
+	width: 4rem;
+	border: 0.7rem solid var(--alien-color);
+}
+
+.alien .antena-left {
+	border-bottom: none;
+	border-left: none;
+	border-radius: 0 4rem 0 0;
+}
+
+.alien .antena-right {
+	border-bottom: none;
+	border-right: none;
+	border-radius: 4rem 0 0 0;
+}
+
+.antena-circles {
+	display: flex;
+	position: relative;
+	right: 6.1rem;
+	top: -1.5rem;
+	gap: 9.2rem;
+}
+
+.antena-circle {
+	height: 1.5rem;
+	width: 1.5rem;
+	border-radius: 50%;
+	background-color: var(--alien-color);
+}
+
+.rim {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.light-1,
+.light-2,
+.light-3 {
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+	background-color: var(--led-ligh-color);
+}
