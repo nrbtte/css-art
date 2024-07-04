@@ -1,0 +1,129 @@
+:root {
+	--background-color: #0d1231;
+	--lamp-shade-color: #3e97e0;
+	--lamp-shade-dark-color: #1283df;
+	--lamp-light-color-top: #fff9bf92;
+	--lamp-light-color-mid: #dffce660;
+	--lamp-light-color-bottom: #fff9bf3a;
+	--lamp-base-color: #669bcc;
+	--lamp-base-dark-color: #518dc5;
+	--lamp-column-color: #dcdcdc;
+	--switch-cord-color: #fff;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: var(--background-color);
+}
+
+.container {
+	width: 32rem;
+	height: 32rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.lamp {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 32rem;
+	height: 32rem;
+}
+
+.lamp-base {
+	border-radius: 5rem 5rem 0 0;
+	width: 10rem;
+	height: 5rem;
+	background-color: var(--lamp-base-color);
+	position: relative;
+}
+
+.lamp-base::after {
+	border-radius: 0 5rem 0 0;
+	content: '';
+	width: 5rem;
+	height: 5rem;
+	background-color: var(--lamp-base-dark-color);
+	position: absolute;
+	left: 5rem;
+}
+
+.lamp-column {
+	width: 1rem;
+	height: 8rem;
+	background-color: var(--lamp-column-color);
+}
+
+.lamp-shade {
+	border-bottom: 15rem solid var(--lamp-shade-color);
+	border-left: 5rem solid transparent;
+	border-right: 5rem solid transparent;
+	width: 14rem;
+	position: relative;
+}
+
+.lamp-shade::after {
+	border-bottom: 15rem solid var(--lamp-shade-dark-color);
+	border-right: 5rem solid transparent;
+	width: 7rem;
+	content: '';
+	position: absolute;
+	left: 7rem;
+}
+
+.cord {
+	-webkit-appearance: none;
+	width: 0.5rem;
+	height: 2rem;
+	background-color: var(--switch-cord-color);
+	position: relative;
+	left: 7rem;
+	transition: 0.5s;
+}
+
+.cord:checked {
+	transition: 0.5s;
+	height: 3.5rem;
+	position: relative;
+}
+
+.cord:after {
+	width: 1.5rem;
+	height: 1.5rem;
+	border-radius: 50%;
+	background-color: var(--lamp-column-color);
+	position: absolute;
+	content: '';
+	top: 2rem;
+	left: -0.5rem;
+	transition: 0.5s;
+}
+
+.cord:checked:after {
+	top: 3.5rem;
+	transition: 0.5s;
+}
+
+.cord:before {
+	width: 25rem;
+	height: 13rem;
+	clip-path: polygon(0% 100%, 17.5% 0%, 82.5% 0%, 100% 100%);
+	position: absolute;
+	content: '';
+	right: -5rem;
+	z-index: -10;
+	transition: 1s;
+}
+
+.cord:checked:before {
+	background: linear-gradient(var(--lamp-light-color-top), var(--lamp-light-color-mid), var(--lamp-light-color-bottom));
+	transition: 1s;
+}
