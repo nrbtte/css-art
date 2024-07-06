@@ -1,0 +1,28 @@
+.container {
+	animation: bee 3s linear infinite;
+}
+
+@keyframes bee {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(5rem);
+	}
+}
+
+.bee::before,
+.bee::after {
+	animation: legs 3s linear infinite;
+}
+
+@keyframes legs {
+	0%,
+	100% {
+		transform: rotateZ(-35deg);
+	}
+	50% {
+		transform: rotateZ(0deg);
+	}
+}
