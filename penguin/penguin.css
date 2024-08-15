@@ -1,0 +1,118 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: var(--body-background-color);
+}
+
+:root {
+	--body-background-color: #bdffeb;
+	--penguin-black: #202020;
+	--penguin-orange: #ff7b00;
+	--penguin-pink: #fd7a7a9f;
+	--penguin-white: #fff;
+	--eye-color: #000;
+	--penguin-height: 18rem;
+	--penguin-width: 15rem;
+}
+
+.penguin {
+	position: absolute;
+	inset: 0;
+	margin: auto;
+	background-color: var(--penguin-black);
+	width: var(--penguin-width);
+	height: var(--penguin-height);
+	border-radius: 50% 50% 30% 30%;
+}
+
+/* feet */
+.penguin::after {
+	content: '';
+	height: 1.2rem;
+	width: 4rem;
+	background-color: var(--penguin-orange);
+	border-radius: 10% 10% 50% 50%;
+	position: absolute;
+	bottom: -1rem;
+	left: 2.7rem;
+	box-shadow: 5.5rem 0rem 0 0 var(--penguin-orange);
+}
+
+.penguin::before {
+	content: '';
+	height: 12rem;
+	width: 12rem;
+	border-radius: 50%;
+	position: absolute;
+	bottom: 1rem;
+	left: 1.5rem;
+	background-color: var(--penguin-white);
+	z-index: 1;
+	box-shadow: -1.2rem -4rem 0 -1rem var(--penguin-white), 1.2rem -4rem 0 -1rem var(--penguin-white);
+}
+
+/* beak */
+.details {
+	width: 2rem;
+	height: 1.3rem;
+	background-color: var(--penguin-orange);
+	border-radius: 0 0 50% 50%;
+	position: absolute;
+	left: 6.5rem;
+	top: 7rem;
+	z-index: 2;
+}
+
+/* eyes and cheeks*/
+.details::before {
+	content: '';
+	position: absolute;
+	height: 2rem;
+	width: 2rem;
+	top: -2rem;
+	left: -2.5rem;
+	border-radius: 50%;
+	background-color: var(--eye-color);
+	box-shadow: 5rem 0 0 var(--eye-color), 6rem 1.5rem 0 -0.5rem var(--penguin-pink),
+		-1rem 1.5rem 0 -0.5rem var(--penguin-pink);
+}
+
+/* white eye highlight */
+.details::after {
+	content: '';
+	position: absolute;
+	top: -1.7rem;
+	left: -2.1rem;
+	height: 0.7rem;
+	width: 0.7rem;
+	background-color: var(--penguin-white);
+	border-radius: 50%;
+	box-shadow: 5rem 0rem 0 0 var(--penguin-white);
+	z-index: 3;
+}
+
+.flipper,
+.flipper::before {
+	width: 5rem;
+	height: 1.5rem;
+	border-radius: 0 0 50% 50%;
+	background-color: var(--penguin-black);
+	position: absolute;
+}
+
+.flipper {
+	top: 10rem;
+	left: -3.5rem;
+	transform: rotateZ(-45deg);
+}
+
+.flipper::before {
+	content: '';
+	transform: rotateZ(90deg);
+	top: 12rem;
+	left: 12rem;
+}
