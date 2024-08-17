@@ -99,7 +99,7 @@ body {
 .flipper::before {
 	width: 5rem;
 	height: 1.5rem;
-	border-radius: 0 0 50% 50%;
+	border-radius: 0 3rem;
 	background-color: var(--penguin-black);
 	position: absolute;
 }
@@ -112,7 +112,7 @@ body {
 
 .flipper::before {
 	content: '';
-	transform: rotateZ(90deg);
-	top: 12rem;
-	left: 12rem;
+	transform: rotateZ(10deg);
+	top: 10rem;
+	left: 14.3rem;
 }
