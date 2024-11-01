@@ -23,3 +23,8 @@ Used [Youtube tutorial](https://www.youtube.com/watch?v=Gy2BP857030) as a refere
 
 ## Penguin
 ![image](https://github.com/user-attachments/assets/3161613a-ec47-495a-85ea-3d04a6054e33)
+
+## Night horizon
+<video src="https://github.com/user-attachments/assets/150900b6-ccd2-415f-9b87-c7e359a8c656" width="1080" height="1920" controls></video>
+
+
