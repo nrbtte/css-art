@@ -1,0 +1,161 @@
+:root {
+	--green: #0fa14c;
+	--dark-green: #032411;
+	--darkest-green: #09350f;
+	--yellow: #fcdc2a;
+	--blue: #00c3ff;
+	--dark-blue: #090724;
+	--black: #000;
+	--white: #fff;
+	--brown: #463333;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	background-color: var(--green);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.toucan {
+	width: 32rem;
+	height: 32rem;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	position: relative;
+	z-index: 1;
+}
+
+.beak {
+	width: 10rem;
+	height: 5rem;
+	background-color: var(--yellow);
+	border-radius: 90% 0 0 0;
+	position: relative;
+	top: -7.5rem;
+}
+
+.beak::before {
+	content: '';
+	position: absolute;
+	top: 0.3rem;
+	left: -0.1rem;
+	width: 5rem;
+	height: 5rem;
+	background-color: var(--black);
+	border-radius: 100% 0 100% 0;
+	transform: rotate(3deg);
+}
+
+.body {
+	width: 10rem;
+	height: 20rem;
+	background-color: var(--black);
+	border-radius: 0 20rem 20rem 0;
+	position: relative;
+	overflow: hidden;
+}
+
+.body::before {
+	content: '';
+	position: absolute;
+	top: 9rem;
+	left: 3rem;
+	width: 10rem;
+	height: 10rem;
+	background-color: var(--yellow);
+	border-radius: 50%;
+}
+
+.tail {
+	width: 8rem;
+	height: 10rem;
+	background-color: var(--black);
+	border-radius: 8rem 0 0 0;
+	position: relative;
+	top: 5rem;
+	right: 18rem;
+}
+
+.head {
+	position: absolute;
+	top: 0.7rem;
+}
+
+.head,
+head::before {
+	width: 5rem;
+	height: 9.3rem;
+	background-color: var(--white);
+	border-radius: 0 10rem 10rem 0;
+}
+
+.head::after {
+	content: '';
+	position: absolute;
+	top: 1.8rem;
+	left: 1rem;
+	width: 1rem;
+	height: 1rem;
+	background-color: var(--white);
+	border-radius: 50%;
+	box-shadow: 0.2rem -0.3rem 0 0.4rem var(--black), 0.2rem -0.3rem 0 0.8rem var(--blue);
+}
+
+.feathers,
+.feathers::before,
+.feathers::after {
+	height: 12rem;
+	width: 3rem;
+	background-color: var(--dark-green);
+	border-radius: 0 12rem;
+	position: absolute;
+	top: 9rem;
+}
+
+.feathers::before {
+	content: '';
+	position: absolute;
+	top: -0.5rem;
+	right: 3rem;
+	border-radius: 12rem 0;
+	background-color: var(--darkest-green);
+	transform: rotate(15deg);
+}
+
+.feathers::after {
+	content: '';
+	position: absolute;
+	left: 3rem;
+	top: -0.5rem;
+	background-color: var(--dark-blue);
+	transform: rotate(-15deg);
+}
+
+.branch {
+	position: absolute;
+	border-radius: 10%;
+	bottom: 2.5rem;
+	width: inherit;
+	height: 3rem;
+	background: repeating-linear-gradient(
+		to right,
+		var(--brown) 0rem,
+		var(--brown) 5rem,
+		transparent 5rem,
+		transparent 5.5rem
+	);
+	z-index: -1;
+}
