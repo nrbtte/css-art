@@ -1,5 +1,8 @@
 # css-art
 
+## Toucan
+![brave_YYWHnF6Zjn](https://github.com/user-attachments/assets/cd848958-0075-4ccf-a942-32501d207011)
+
 ## Alien 
 Alien is floating up and down and has 3 light blinking animation.
 ![Alien](https://github.com/user-attachments/assets/de170373-29bf-4962-a595-3505aabbdc68)
