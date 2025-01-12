@@ -1,0 +1,79 @@
+:root {
+	--yellow-background: #fdd897;
+	--pink: #fd6f6f;
+	--pink-transparent: #f0a3a3ab;
+	--dark-brown: #412a0cf2;
+	--brown: #7a5521;
+	--light-green: #e2fa74;
+	--green: #8dab4a;
+	--dark-green: #4a7337;
+	--dark-shadow: #0000002a;
+	--light-shadow: #869c4d3b;
+	--black: #000;
+	--white: #fff;
+}
+
+body,
+.avocado {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+body {
+	background-color: var(--yellow-background);
+}
+
+body,
+html {
+	height: 100%;
+	overflow: hidden;
+}
+
+*::after,
+*::before {
+	content: '';
+	position: absolute;
+}
+
+.avocado {
+	position: relative;
+	height: 25rem;
+	width: 18rem;
+	background-color: var(--light-green);
+	border-radius: 50% / 60% 60% 40% 40%;
+	box-shadow: 
+		inset 1rem -2rem 0 var(--light-shadow), 
+		0 0 0 2rem var(--green), 
+		0 0 0 3rem var(--dark-green),
+		-3rem 0 0 3rem var(--dark-shadow);
+}
+
+.avocado::before {
+	height: 10rem;
+	width: 10rem;
+	border-radius: 50%;
+	background-color: var(--brown);
+	top: 50%;
+	left: 25%;
+	box-shadow: 
+		inset 1rem -0.8rem 0 0 var(--dark-brown), 
+		-3.8rem -10.2rem 0 -4.7rem var(--white),
+		-4rem -10rem 0 -4rem var(--black), 
+		3.2rem -10.2rem 0 -4.7rem var(--white), 
+		3rem -10rem 0 -4rem var(--black),
+		-5.7rem -9rem 0 -4.4rem var(--pink-transparent), 
+		5rem -9rem 0 -4.4rem var(--pink-transparent),
+		-5.9rem -8.9rem 0 -4.1rem var(--pink), 
+		4.8rem -8.9rem 0 -4.1rem var(--pink);
+}
+
+.avocado::after {
+	height: 1.1rem;
+	width: 2rem;
+	border-radius: 0% 0% 50% 50%;
+	border: 5px solid var(--black);
+	background: radial-gradient(at 50% 100%, var(--pink) 0.5rem, var(--black) 0.5rem);
+	top: 9.25rem;
+	left: 7.75rem;
+}
