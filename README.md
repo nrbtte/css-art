@@ -1,4 +1,7 @@
 # css-art
+## Solar System
+![brave_ZwL4jsbo87](https://github.com/user-attachments/assets/0e44aab8-17a1-4df1-aa37-fed905c292de)
+
 ## Turtle
 ![image](https://github.com/user-attachments/assets/5afc4e28-1aef-4d55-b53b-f64b6d0abd33)
 
