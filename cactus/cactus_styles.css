@@ -1,0 +1,125 @@
+:root {
+	--background-color-1: #f9eabc;
+	--background-color-2: #fbe49d;
+	--background-color-3: #f7d673;
+	--pot-color-1: #a85502;
+	--pot-color-2: #914c06;
+	--soil-color: #3d1b0e;
+	--pebble-color: #94622f8f;
+	--cactus-color-1: #045737;
+	--cactus-color-2: #5e8269;
+	--flower-color: #f587a2;
+	--highlight-color: #ffffff1e;
+	--shadow-color: #0e00001b;
+	--shadow-color-2: #0e0000c8;
+	--left-offset: -25px;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	background: radial-gradient(
+		circle,
+		var(--background-color-1) 20%,
+		var(--background-color-2) 60%,
+		var(--background-color-2) 85%
+	);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.art-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+}
+
+.cactus {
+	border: 1px solid black;
+	width: 300px;
+	height: 520px;
+	background-color: var(--cactus-color-1);
+	border-radius: 45% 45% 15% 15%;
+	position: relative;
+	z-index: 2;
+}
+
+.soil {
+	width: 400px;
+	height: 150px;
+	background-color: var(--soil-color);
+	border-radius: 50%;
+	position: absolute;
+	top: 430px;
+	z-index: 1;
+	box-shadow:
+		0 15px 0 2.2rem var(--pot-color-2),
+		inset 0 15px 0 0 var(--shadow-color-2);
+	display: flex;
+	justify-content: center;
+}
+
+.pebbles {
+	width: 10px;
+	height: 10px;
+	background-color: var(--pebble-color);
+	border-radius: 50%;
+	box-shadow:
+		-180px 80px 0 0.2rem var(--pebble-color),
+		-165px 95px 0 0.01rem var(--pebble-color),
+		-155px 60px 0 0.4rem var(--pebble-color),
+		-145px 105px 0 0.3rem var(--pebble-color),
+		-140px 80px 0 0.2rem var(--pebble-color),
+		-125px 118px 0 0.1rem var(--pebble-color),
+		-115px 98px 0 0.3rem var(--pebble-color),
+		-95px 118px 0 0.4rem var(--pebble-color),
+		-70px 100px 0 0.3rem var(--pebble-color),
+		-60px 125px 0 0.3rem var(--pebble-color),
+		-45px 105px 0 0.2rem var(--pebble-color),
+		-30px 130px 0 0.4rem var(--pebble-color),
+		-20px 100px 0 0.3rem var(--pebble-color),
+		0px 110px 0 0.1rem var(--pebble-color),
+		5px 130px 0 0.2rem var(--pebble-color),
+		20px 100px 0 0.3rem var(--pebble-color),
+		35px 130px 0 0.3rem var(--pebble-color),
+    40px 110px 0 0.01rem var(--pebble-color),
+		55px 95px 0 0.2rem var(--pebble-color),
+		65px 125px 0 0.4rem var(--pebble-color),
+		80px 100px 0 0.3rem var(--pebble-color),
+		95px 120px 0 0.2rem var(--pebble-color),
+		115px 100px 0 0.4rem var(--pebble-color),
+		120px 120px 0 0.01rem var(--pebble-color),
+		145px 80px 0 0.2rem var(--pebble-color),
+		145px 105px 0 0.3rem var(--pebble-color),
+		150px 45px 0 0.01rem var(--pebble-color),
+		165px 60px 0 0.4rem var(--pebble-color),
+		165px 95px 0 0.01rem var(--pebble-color),
+		185px 80px 0 0.2rem var(--pebble-color);
+}
+
+.pot {
+	width: 450px;
+	height: 350px;
+	background-color: var(--pot-color-1);
+	border-radius: 0% 0% 35% 35%;
+	position: relative;
+	box-shadow:
+		inset -50px 0px 0 0 var(--shadow-color),
+		inset 0 -90px 0 0 var(--pot-color-2);
+}
+
+.pot::before {
+	content: '';
+	width: 140px;
+	height: 100%;
+	background-color: var(--highlight-color);
+	border-radius: 0% 0% 50% 50%;
+	position: absolute;
+	left: 25px;
+	top: 0;
+}
