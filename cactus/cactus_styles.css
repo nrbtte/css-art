@@ -2,17 +2,42 @@
 	--background-color-1: #f9eabc;
 	--background-color-2: #fbe49d;
 	--background-color-3: #f7d673;
-	--pot-color-1: #a85502;
-	--pot-color-2: #914c06;
+
+	--pot-color-1: #b4d7f2;
+	--pot-color-2: #a7cae5;
+
 	--soil-color: #3d1b0e;
-	--pebble-color: #94622f8f;
-	--cactus-color-1: #045737;
-	--cactus-color-2: #5e8269;
-	--flower-color: #f587a2;
+
+	--pebble-color-1: #94622f8f;
+	--pebble-color-2: #fc83096a;
+	--pebble-color-3: #9a90866a;
+
+	--cactus-color-1: #649472;
+	--cactus-color-2: #25644c;
+
+	--flower-color-3: #c26a80;
+	--flower-color: #f2819d;
+	--flower-color-5: #f68aa5;
+	--flower-color-4: #fc99b1;
+	--flower-color-2: #ffbbcc;
+
+	--spikes-color-1: #ffffff82;
+	--spikes-color-2: #d0cece82;
+	--spikes-color-3: #a9a8a882;
+
 	--highlight-color: #ffffff1e;
-	--shadow-color: #0e00001b;
-	--shadow-color-2: #0e0000c8;
+
+	--shadow-color-1: #0e00001b;
+	--shadow-color-2: #0e000083;
+	--shadow-color-3: #0e0000c8;
+
 	--left-offset: -25px;
+}
+
+*::before,
+*::after {
+	position: absolute;
+	content: '';
 }
 
 html,
@@ -40,13 +65,103 @@ body {
 }
 
 .cactus {
-	border: 1px solid black;
 	width: 300px;
 	height: 520px;
-	background-color: var(--cactus-color-1);
 	border-radius: 45% 45% 15% 15%;
 	position: relative;
 	z-index: 2;
+	background: linear-gradient(
+		to right,
+		var(--cactus-color-1) 0% 15%,
+		var(--cactus-color-2) 15% 30%,
+		var(--cactus-color-1) 30% 40%,
+		var(--cactus-color-2) 40% 60%,
+		var(--cactus-color-1) 60% 70%,
+		var(--cactus-color-2) 70% 85%,
+		var(--cactus-color-1) 85% 100%
+	);
+
+	overflow: hidden;
+
+	box-shadow:
+		inset 25px 0 0 var(--cactus-color-2),
+		inset -25px 0 0 var(--cactus-color-2);
+}
+
+.cactus::before,
+.cactus::after {
+	width: 100px;
+	height: 520px;
+}
+
+.cactus::before {
+	background-color: var(--highlight-color);
+}
+
+.cactus::after {
+	background-color: var(--shadow-color-1);
+	right: 0;
+}
+
+.spikes {
+	position: absolute;
+	z-index: 3;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	top: -12px;
+	left: 48%;
+	background-color: var(--spikes-color-1);
+	box-shadow:
+		-55px 12px 0 var(--spikes-color-1),
+		-95px 52px 0 var(--spikes-color-1),
+		-130px 112px 0 var(--spikes-color-1),
+		-145px 182px 0 var(--spikes-color-1),
+		-150px 252px 0 var(--spikes-color-1),
+		-150px 322px 0 var(--spikes-color-1),
+		-150px 392px 0 var(--spikes-color-1),
+		-145px 455px 0 var(--spikes-color-1),
+		-120px 512px 0 var(--spikes-color-1),
+		-65px 72px 0 var(--spikes-color-1),
+		-85px 132px 0 var(--spikes-color-1),
+		-88px 202px 0 var(--spikes-color-1),
+		-90px 272px 0 var(--spikes-color-1),
+		-90px 342px 0 var(--spikes-color-1),
+		-87px 422px 0 var(--spikes-color-1),
+		-80px 480px 0 var(--spikes-color-1),
+		0 0 0 0.1rem var(--spikes-color-1),
+		-25px 40px 0 0.1rem var(--spikes-color-1),
+		-28px 95px 0 0.1rem var(--spikes-color-1),
+		-30px 150px 0 0.1rem var(--spikes-color-1),
+		-33px 210px 0 0.1rem var(--spikes-color-1),
+		-35px 280px 0 0.1rem var(--spikes-color-1),
+		-33px 360px 0 0.1rem var(--spikes-color-1),
+		-30px 430px 0 0.1rem var(--spikes-color-1),
+		-25px 510px 0 0.1rem var(--spikes-color-1),
+		25px 40px 0 0.1rem var(--spikes-color-2),
+		28px 95px 0 0.1rem var(--spikes-color-2),
+		30px 150px 0 0.1rem var(--spikes-color-2),
+		33px 210px 0 0.1rem var(--spikes-color-2),
+		35px 280px 0 0.1rem var(--spikes-color-2),
+		33px 360px 0 0.1rem var(--spikes-color-2),
+		30px 430px 0 0.1rem var(--spikes-color-2),
+		25px 510px 0 0.1rem var(--spikes-color-2),
+		65px 72px 0 var(--spikes-color-3),
+		85px 132px 0 var(--spikes-color-3),
+		88px 202px 0 var(--spikes-color-3),
+		90px 272px 0 var(--spikes-color-3),
+		90px 342px 0 var(--spikes-color-3),
+		87px 422px 0 var(--spikes-color-3),
+		80px 480px 0 var(--spikes-color-3),
+		55px 12px 0 var(--spikes-color-3),
+		95px 52px 0 var(--spikes-color-3),
+		130px 112px 0 var(--spikes-color-3),
+		145px 182px 0 var(--spikes-color-3),
+		150px 252px 0 var(--spikes-color-3),
+		150px 322px 0 var(--spikes-color-3),
+		150px 392px 0 var(--spikes-color-3),
+		145px 455px 0 var(--spikes-color-3),
+		120px 512px 0 var(--spikes-color-3);
 }
 
 .soil {
@@ -54,52 +169,54 @@ body {
 	height: 150px;
 	background-color: var(--soil-color);
 	border-radius: 50%;
-	position: absolute;
 	top: 430px;
-	z-index: 1;
 	box-shadow:
 		0 15px 0 2.2rem var(--pot-color-2),
-		inset 0 15px 0 0 var(--shadow-color-2);
+		0 35px 0 1.5rem var(--shadow-color-2),
+		inset 0 15px 0 0 var(--shadow-color-3);
 	display: flex;
 	justify-content: center;
+	position: absolute;
+	z-index: 1;
 }
 
 .pebbles {
 	width: 10px;
 	height: 10px;
-	background-color: var(--pebble-color);
+	background-color: var(--pebble-color-1);
 	border-radius: 50%;
 	box-shadow:
-		-180px 80px 0 0.2rem var(--pebble-color),
-		-165px 95px 0 0.01rem var(--pebble-color),
-		-155px 60px 0 0.4rem var(--pebble-color),
-		-145px 105px 0 0.3rem var(--pebble-color),
-		-140px 80px 0 0.2rem var(--pebble-color),
-		-125px 118px 0 0.1rem var(--pebble-color),
-		-115px 98px 0 0.3rem var(--pebble-color),
-		-95px 118px 0 0.4rem var(--pebble-color),
-		-70px 100px 0 0.3rem var(--pebble-color),
-		-60px 125px 0 0.3rem var(--pebble-color),
-		-45px 105px 0 0.2rem var(--pebble-color),
-		-30px 130px 0 0.4rem var(--pebble-color),
-		-20px 100px 0 0.3rem var(--pebble-color),
-		0px 110px 0 0.1rem var(--pebble-color),
-		5px 130px 0 0.2rem var(--pebble-color),
-		20px 100px 0 0.3rem var(--pebble-color),
-		35px 130px 0 0.3rem var(--pebble-color),
-    40px 110px 0 0.01rem var(--pebble-color),
-		55px 95px 0 0.2rem var(--pebble-color),
-		65px 125px 0 0.4rem var(--pebble-color),
-		80px 100px 0 0.3rem var(--pebble-color),
-		95px 120px 0 0.2rem var(--pebble-color),
-		115px 100px 0 0.4rem var(--pebble-color),
-		120px 120px 0 0.01rem var(--pebble-color),
-		145px 80px 0 0.2rem var(--pebble-color),
-		145px 105px 0 0.3rem var(--pebble-color),
-		150px 45px 0 0.01rem var(--pebble-color),
-		165px 60px 0 0.4rem var(--pebble-color),
-		165px 95px 0 0.01rem var(--pebble-color),
-		185px 80px 0 0.2rem var(--pebble-color);
+		-180px 80px 0 0.2rem var(--pebble-color-1),
+		-165px 95px 0 0.01rem var(--pebble-color-2),
+		-160px 60px 0 0.4rem var(--pebble-color-3),
+		-145px 105px 0 0.3rem var(--pebble-color-3),
+		-140px 80px 0 0.2rem var(--pebble-color-2),
+		-125px 118px 0 0.1rem var(--pebble-color-2),
+		-115px 98px 0 0.3rem var(--pebble-color-1),
+		-92px 95px 0 0.01rem var(--pebble-color-3),
+		-95px 118px 0 0.4rem var(--pebble-color-3),
+		-70px 100px 0 0.3rem var(--pebble-color-2),
+		-65px 128px 0 0.3rem var(--pebble-color-1),
+		-45px 105px 0 0.2rem var(--pebble-color-1),
+		-30px 130px 0 0.4rem var(--pebble-color-3),
+		-20px 100px 0 0.3rem var(--pebble-color-2),
+		0px 110px 0 0.1rem var(--pebble-color-1),
+		5px 130px 0 0.2rem var(--pebble-color-2),
+		20px 100px 0 0.3rem var(--pebble-color-1),
+		35px 130px 0 0.3rem var(--pebble-color-3),
+		40px 110px 0 0.01rem var(--pebble-color-1),
+		55px 95px 0 0.2rem var(--pebble-color-1),
+		65px 125px 0 0.4rem var(--pebble-color-2),
+		80px 100px 0 0.3rem var(--pebble-color-2),
+		95px 120px 0 0.2rem var(--pebble-color-1),
+		115px 100px 0 0.4rem var(--pebble-color-3),
+		120px 120px 0 0.01rem var(--pebble-color-1),
+		145px 80px 0 0.2rem var(--pebble-color-1),
+		145px 105px 0 0.3rem var(--pebble-color-2),
+		150px 45px 0 0.01rem var(--pebble-color-1),
+		165px 60px 0 0.4rem var(--pebble-color-2),
+		165px 95px 0 0.01rem var(--pebble-color-1),
+		185px 80px 0 0.2rem var(--pebble-color-3);
 }
 
 .pot {
@@ -109,17 +226,50 @@ body {
 	border-radius: 0% 0% 35% 35%;
 	position: relative;
 	box-shadow:
-		inset -50px 0px 0 0 var(--shadow-color),
+		inset -50px 0px 0 0 var(--shadow-color-1),
 		inset 0 -90px 0 0 var(--pot-color-2);
 }
 
 .pot::before {
-	content: '';
 	width: 140px;
 	height: 100%;
 	background-color: var(--highlight-color);
 	border-radius: 0% 0% 50% 50%;
-	position: absolute;
 	left: 25px;
 	top: 0;
+}
+
+.flower,
+.flower::before,
+.flower::after {
+	height: 100px;
+	width: 70px;
+}
+
+.flower {
+	background-color: var(--flower-color);
+	border-radius: 100% 0;
+	position: absolute;
+	left: 50%;
+	top: -11%;
+	box-shadow:
+		inset -10px 0 0 var(--shadow-color-1),
+		22px 0 0 var(--flower-color-3);
+}
+
+.flower::before {
+	background-color: var(--flower-color-4);
+	border-radius: 0% 100%;
+	left: -100%;
+	box-shadow:
+		inset 15px 0 0 var(--highlight-color),
+		-22px 0 0 var(--flower-color-2);
+}
+
+.flower::after {
+	background-color: var(--flower-color-5);
+	border-radius: 0% 100%;
+	left: -50%;
+	transform: rotate(30deg);
+	box-shadow: inset 15px 0 0 var(--highlight-color);
 }
