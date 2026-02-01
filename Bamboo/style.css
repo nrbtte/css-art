@@ -1,0 +1,136 @@
+:root {
+	--pot-color-1: #8f7676;
+	--pot-color-2: #6a5454;
+
+	--bamboo-green-0: #2e4a133;
+	--bamboo-green-1: #639833;
+	--bamboo-green-2: #b2cd49;
+	--bamboo-green-3: #d1d445;
+
+	--pot-height: 200px;
+	--pot-width: 500px;
+
+	--pot-bottom-width: 300px;
+
+	--gap: 90px;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+*::before,
+*::after {
+	position: absolute;
+	content: '';
+}
+
+.scene-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	top: 20%;
+	bottom: 20%;
+}
+
+.bamboo-plant,
+.bamboo-plant::before,
+.bamboo-plant::after {
+	width: 60px;
+	bottom: -1px;
+	border-radius: 5% 5% 10% 10%;
+	box-shadow:
+		inset -15px -20px 20px #1e3e0271,
+		inset 10px -20px 20px #41542f,
+		inset 35px -20px 50px #fff1f349;
+}
+
+.bamboo-plant {
+	height: 700px;
+	position: relative;
+
+	background:
+		radial-gradient(at 30% 80%, #ffffff45, #fff0 20%), radial-gradient(at 30% 40%, #fff3, #fff0 30%),
+		linear-gradient(
+			to top,
+			var(--bamboo-green-2) 0% 15%,
+			var(--bamboo-green-3) 15% 20%,
+			var(--bamboo-green-1) 20% 35%,
+			var(--bamboo-green-3) 35% 40%,
+			var(--bamboo-green-2) 40% 55%,
+			var(--bamboo-green-3) 55% 60%,
+			var(--bamboo-green-1) 60% 75%,
+			var(--bamboo-green-3) 75% 80%,
+			var(--bamboo-green-2) 80% 100%
+		);
+}
+
+.bamboo-plant::before {
+	height: 450px;
+	right: var(--gap);
+	background:
+		radial-gradient(at 30% 80%, #ffffff45, #fff0 20%), radial-gradient(at 30% 40%, #fff3, #fff0 30%),
+		linear-gradient(
+			to top,
+			var(--bamboo-green-1) 0% 15%,
+			var(--bamboo-green-3) 15% 20%,
+			var(--bamboo-green-2) 20% 35%,
+			var(--bamboo-green-3) 35% 40%,
+			var(--bamboo-green-3) 40% 55%,
+			var(--bamboo-green-3) 55% 60%,
+			var(--bamboo-green-1) 60% 75%,
+			var(--bamboo-green-3) 75% 80%,
+			var(--bamboo-green-2) 80% 100%
+		);
+}
+
+.bamboo-plant::after {
+	height: 350px;
+	left: var(--gap);
+	background:
+		radial-gradient(at 30% 80%, #ffffff45, #fff0 20%), radial-gradient(at 30% 40%, #fff3, #fff0 30%),
+		linear-gradient(
+			to bottom,
+			var(--bamboo-green-1) 0% 15%,
+			var(--bamboo-green-3) 15% 20%,
+			var(--bamboo-green-2) 20% 35%,
+			var(--bamboo-green-3) 35% 40%,
+			var(--bamboo-green-3) 40% 55%,
+			var(--bamboo-green-3) 55% 60%,
+			var(--bamboo-green-1) 60% 75%,
+			var(--bamboo-green-3) 75% 80%,
+			var(--bamboo-green-2) 80% 100%
+		);
+}
+
+.pot {
+	height: var(--pot-height);
+	width: var(--pot-width);
+	position: relative;
+	border-radius: 10% 10% 35% 35%;
+	background-color: red;
+	background:
+		radial-gradient(at 40% 40%, #ffffff45, #fff0 50%),
+		var(--pot-color-1);
+
+		box-shadow:
+		inset -90px -70px 50px #40071243,
+		inset -20px -20px 20px #40071288,
+		inset 30px -30px 70px #40071288;
+}
+
+.pot::before {
+	height: calc(var(--pot-height) / 3);
+	width: var(--pot-bottom-width);
+	top: 97%;
+	left: calc((var(--pot-width) - var(--pot-bottom-width)) / 2);
+	border-radius: 0% 0% 35% 35%;
+
+	box-shadow:
+		inset -10px -10px 20px #380711a2;
+	background:
+		var(--pot-color-2)
+}
